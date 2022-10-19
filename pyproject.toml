@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "go_sim_openmm"
+version = "0.1.0"
+description = "Run Go-Style simulations with OpenMM"
+authors = ["Lucas Tepper <lucas.tepper.91@gmail.com>"]
+license = "GPL-3.0"
+
+# TODO add dependencies
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+benchmarker = 'go_sim_openmm:main.run_sim'
