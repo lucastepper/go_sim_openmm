@@ -1,0 +1,25 @@
+steps = 100
+stride = 1
+nparticles = 10
+dt = 0.001                                      # ps
+friction = 5.0                                  # ps^-1
+temperature = 300.0                             # K
+mass = 35.0                                     # u
+charge = 0.0                                    # e
+epsilon = 1e-5                                  # kJ/mol
+sigma = 0.01                                    # nm
+l_bond = 0.1                                    # nm
+k_bond = 60000.0                                # kJ/mol/nm^2
+epsilon_nat_contc = 1e-5                        # kJ/mol
+sigma_nat_contc = 0.08                          # nm
+native_contc = [
+    [0, 8],
+    [0, 9],
+    [1, 8],
+    [1, 9]
+]
+use_bond_forces = true
+use_nonbond_forces = true
+use_native_contc_forces = true
+save_file = "/tmp/traj.h5"
+platform = 'CPU'
