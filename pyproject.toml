@@ -16,4 +16,4 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-benchmarker = 'go_sim_openmm:main.run_sim'
+go_sim_openmm = 'go_sim_openmm:main.run_sim'

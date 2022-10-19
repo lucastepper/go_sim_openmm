@@ -1,7 +1,10 @@
+import warnings
 from .config import Config
 import numpy as np
 import openmm
-import simtk.openmm.app as app
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore")
+    import simtk.openmm.app as app
 import mdtraj as md
 import tqdm
 
@@ -12,7 +15,7 @@ class Simulation:
     object from the config class.
     """
 
-    def __init__(self, config) -> None:
+    def __init__(self, config: Config) -> None:
         self.config = config
         self.system = self.get_system()
         if self.config.use_bond_forces:
@@ -121,6 +124,10 @@ class Simulation:
     def run(self):
         """Run the simulation"""
         pbar = tqdm.tqdm(range(self.config.steps), desc="Running simulation")
+        if not self.sim:
+            self.sim = self.get_simulation()
+        if not self.reporter and self.config.save_file:
+            self.add_state_reporter()
         for _i in range(self.config.steps // 100):
             self.sim.step(100)
             pbar.update(100)

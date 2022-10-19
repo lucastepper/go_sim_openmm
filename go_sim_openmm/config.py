@@ -23,8 +23,10 @@ class Config(BaseModel):
     use_nonbond_forces: bool = True
     use_native_contc_forces: bool = True
     platform: str = "CPU"
+    save_file: str = "/tmp/traj.h5"
 
-    def help(self):
+    @classmethod
+    def help(_cls):
         return """
     Configuration file for the GO-Style simulation using OpenMM. The
     simulation particles are part of a harmonic chain and interact
@@ -71,7 +73,7 @@ class Config(BaseModel):
         if __format_spec == "'fancy'" or __format_spec == "fancy":
             # find all spaces that are followed by an attribute of
             # the dataclass and replace them with a newline
-            output = re.split("(\s[a-z|_]+=)", output)
+            output = re.split("( [a-z|_]+=)", output)
             for i, item in enumerate(output):
                 if item.startswith(" "):
                     output[i] = f"\n{item[1:]}"
