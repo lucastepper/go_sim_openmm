@@ -7,11 +7,11 @@ temperature = 300.0                             # K
 mass = 35.0                                     # u
 charge = 0.0                                    # e
 epsilon = 1e-5                                  # kJ/mol
-sigma = 0.01                                    # nm
+sigma = 1                                    # nm
 l_bond = 0.1                                    # nm
 k_bond = 60000.0                                # kJ/mol/nm^2
 epsilon_nat_contc = 1e-5                        # kJ/mol
-sigma_nat_contc = 0.08                          # nm
+sigma_nat_contc = 1                         # nm
 native_contc = [
     [0, 8],
     [0, 9],

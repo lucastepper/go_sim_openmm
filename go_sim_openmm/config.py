@@ -1,7 +1,7 @@
 import re
 import toml
 from pydantic import BaseModel
-
+#from typing import list 
 
 class Config(BaseModel):
     steps: int
